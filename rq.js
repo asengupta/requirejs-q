@@ -1,11 +1,16 @@
-define(["Q"], function(Q) {
+define([], function() {
     return {
-      load: function (name, req, onload, config) {
-          var deferred = Q.defer();
+      load: function(name, req, onload, config) {
           req([name], function (value) {
-              deferred.resolve(value);
+          	  if (!value.then) {
+          	  	onload(value);
+          	  }
+          	  else {
+          	  	value.then(function(actualValue) {
+          	  		onload(actualValue);
+          	  	})
+          	  }
           });
-          return deferred.promise;
-      }
+      	}
     };
 });
