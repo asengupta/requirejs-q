@@ -7,6 +7,7 @@ This project has two components you can use.
 
 requireQ
 ========
+
   var promise = requireQ(["some-module", "another-module"]);
   promise.spread(function(m1, m2) {
     console.log("Modules were loaded.");
