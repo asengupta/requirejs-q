@@ -26,10 +26,7 @@ An async module which returns a Q promise:
    // async-module.js
    define([], function() {
      console.log("This does nothing either...");
-  	 var t = Q.fcall(function() {return {data: "Again"};});
-  	 console.log("t is ");
-  	 console.log(t);
-  	 return t;
+  	  return Q.fcall(function() {return {data: "Again"};});
    });
 ```
 
